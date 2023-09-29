@@ -1,11 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const { toNamespacedPath } = require('node:path/posix');
 
+// Initialize the open port to 3000, need to make sure port 3000 is open. 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware
+// Middleware to process the request to server. 
 app.use(bodyParser.json());
 
 // MongoDB Connection [ File name can be different based on host.]
@@ -22,7 +24,7 @@ db.once('open', () => {
 
 // Define the Bathroom Schema [Just an sample ]
 const bathroomSchema = new mongoose.Schema({
-  name: String,
+  Building: String,
   location: String,
   cleanRating: Number,
   crowdedRating: Number,
@@ -35,6 +37,7 @@ app.get('/bathrooms', async (req, res) => {
   try {
     const bathrooms = await Bathroom.find();
     res.json(bathrooms);
+
   } catch (err) {
     res.status(500).json({ error: 'Server error' });
   }
@@ -44,9 +47,9 @@ app.get('/bathrooms', async (req, res) => {
 // Handle POST requests to /bathrooms [ again this can be different]
 app.post('/bathrooms', async (req, res) => {
   try {
-    const { name, location, cleanRating, crowdedRating } = req.body;
+    const { Building, location, cleanRating, crowdedRating } = req.body;
     const bathroom = new Bathroom({
-      name,
+      Building,
       location,
       cleanRating,
       crowdedRating,
