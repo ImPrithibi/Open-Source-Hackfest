@@ -1,0 +1,71 @@
+body {
+    background-color: #ffffff;
+}
+
+.Open{
+    color: green;
+    background-color: white;
+}
+
+.Closed {
+    color: red;
+    background-color: white;
+}
+
+.Dirty {
+    background-color: red;
+    color: white;
+} 
+
+.Clean {
+    background-color: green;
+    color: white;
+}
+
+.button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.floor {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.floor > button {
+    width: 50%;
+    font-size: 1.4rem;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+
+.ListView {
+    display: flex;
+    max-width: 90vw;
+    flex-wrap: wrap;
+    column-gap: 5vw;
+    justify-content: center;
+}
+
+h3 {
+    padding-bottom: 0;
+    margin-bottom: 1vh;
+}
+
+.floor-title {
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 5vh;
+    font-size: 2.5rem;
+}
+
+.floor-container {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 2em;
+    border-radius: 15px;
+    background-color: white;
+    padding-right: 3vw;
+    padding-left: 3vw;
+}
