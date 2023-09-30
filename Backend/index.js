@@ -26,14 +26,16 @@ db.once('open', () => {
 const bathroomSchema = new mongoose.Schema({
   Building: String,
   location: String,
+  cleanStatus: String,
+  openRating: Number,
   cleanRating: Number,
-  crowdedRating: Number,
+  openStatus: String,
 });
 
 const Bathroom = mongoose.model('Bathroom', bathroomSchema);
 
 // API Routes
-app.get('/bathrooms', async (req, res) => {
+app.get('/report-bathrooms', async (req, res) => {
   try {
     const bathrooms = await Bathroom.find();
     res.json(bathrooms);
@@ -47,12 +49,14 @@ app.get('/bathrooms', async (req, res) => {
 // Handle POST requests to /bathrooms [ again this can be different]
 app.post('/bathrooms', async (req, res) => {
   try {
-    const { Building, location, cleanRating, crowdedRating } = req.body;
+    const { Building, location, cleanRating, openRating } = req.body;
     const bathroom = new Bathroom({
       Building,
       location,
       cleanRating,
-      crowdedRating,
+      openRating,
+      cleanStatus,
+      openStatus,
     });
     await bathroom.save();
     res.status(201).json(bathroom);
