@@ -1,5 +1,8 @@
-const express = require('express');
+
+require('dotenv').config()
+
 const mongoose = require('mongoose');
+const express = require('express');
 const bodyParser = require('body-parser');
 
 const app = express();
@@ -8,8 +11,9 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(bodyParser.json());
 
+
 // MongoDB Connection [ File name can be different based on host.]
-mongoose.connect('mongodb://localhost/bathroom_locator', {
+mongoose.connect(`mongodb+srv://jonscrp:${process.env.DB_PASSWORD}@cluster0.8ldtugv.mongodb.net/?retryWrites=true&w=majority`, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -28,13 +32,35 @@ const bathroomSchema = new mongoose.Schema({
   crowdedRating: Number,
 });
 
-const Bathroom = mongoose.model('Bathroom', bathroomSchema);
+
+const Bathrooms = mongoose.model('Bathrooms', bathroomSchema);
+
+
+// Create a bathroom
+const new_bathroom = new Bathrooms(
+  // send object
+  {
+  name:"Junior",
+  location: "House",
+  cleanRating: 9,
+  crowdedRating: 56,
+}
+);
+new_bathroom.save();
+
+
+
+app.get(`/` , async (req, res) => {
+  res.send(`Home`);
+});
+
 
 // API Routes
 app.get('/bathrooms', async (req, res) => {
+  console.log("get/bathrooms");
   try {
-    const bathrooms = await Bathroom.find();
-    res.json(bathrooms);
+    const bathroom = await Bathrooms.find();
+    res.json(bathroom);
   } catch (err) {
     res.status(500).json({ error: 'Server error' });
   }
@@ -45,7 +71,7 @@ app.get('/bathrooms', async (req, res) => {
 app.post('/bathrooms', async (req, res) => {
   try {
     const { name, location, cleanRating, crowdedRating } = req.body;
-    const bathroom = new Bathroom({
+    const bathroom = new Bathrooms({
       name,
       location,
       cleanRating,
