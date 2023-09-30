@@ -1,15 +1,14 @@
-import CampusMap from './components/CampusMap'
+// import { useState } from 'react'
 import './App.css'
+import  Building from './Components/Building'
 
 function App() {
-  
+  // const [count, setCount] = useState(0)
 
   return (
     <>
-      <div className="App">
-        <h1> Interactive Map made with React and Leaflet</h1>
-        <CampusMap />
-       
+      <div>
+        <Building buildingName="Library" numberOfFloors={[1, 2, 3, 4, 5, 6]}></Building>
       </div>
     </>
   )

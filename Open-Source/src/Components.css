@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter&display=swap');
+
+* {
+    font-family: 'Bitter', serif;
+}
+
+body {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.Open{
+    color: green;
+    background-color: white;
+}
+
+.Closed {
+    color: red;
+    background-color: white;
+}
+
+.Dirty {
+    background-color: red;
+    color: white;
+} 
+
+.Clean {
+    background-color: green;
+    color: white;
+}
+
+.button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button:focus, button:hover {
+    outline: 0 !important;
+    border-color: white !important;
+    cursor: auto;
+}
+
+.floor {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    text-align: center;
+}
+
+.floor > button {
+    font-size: 1.2rem;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+img {
+    width: 100%;
+}
+
+.ListView {
+    display: grid;
+    row-gap: 3vh;
+    grid-template-columns: 50% 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+h3 {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.floor-title {
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: auto;
+    font-size: 2.5rem;
+    
+}
+
+.floor-container {
+    padding: 2em;
+    border-radius: 5px;
+    background-color: white;
+    justify-self: center;
+    max-width: 100vw;
+}
+
+li {
+    list-style: none;
+    height: 100%;
+}
+
+.building {
+    min-height: 100vh;
+    width: 99vw;
+}
+
+a {
+    color: white !important;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+header {
+    background-color: rgb(169, 5, 5);
+    color: white;
+    padding-top: 1vh;
+    padding-bottom: 2vh;
+
+}
+
+@media (max-width: 480px) {
+    body, button {
+            font-size: 1rem !important;
+    }
+    h1 {
+        font-size: 1.3rem !important;
+    }
+    .ListView {
+        display: grid;
+        grid-template-columns: 100% !important;
+        justify-content: center;
+        align-items: center;
+    }
+}
