@@ -1,4 +1,4 @@
-import CampusMap from './components/CampusMap'
+import CampusMap from './Components/CampusMap'
 import './App.css'
 
 function App() {
