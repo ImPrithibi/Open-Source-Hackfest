@@ -1,6 +1,12 @@
 import Button from './Button.jsx'
+import PropTypes from 'prop-types';
+
 // import { useState } from 'react'
 
+Floor.propTypes = {
+    floorNumber: PropTypes.number.isRequired,
+    hasBathrooms: PropTypes.bool.isRequired
+};
 
 function Floor({floorNumber, hasBathrooms}){
     
@@ -32,15 +38,16 @@ function Floor({floorNumber, hasBathrooms}){
 
         return (
             <div className="floor-container">
-                <h1 className='floor-title'>Floor {floorNumber} </h1>
+                    
+                <h1 className='floor-title'>Floor {console.log("Floor number:", floorNumber)} </h1>
                 <div className="floor">
                     <section>
-                        <h3>Women's</h3>
+                        <h3>Women&rsquo;s</h3>
                         <Button status={currentWStatus}></Button>
                         <Button status={currentWCleanliness}></Button>
                     </section>
                     <section>
-                        <h3>Men's:</h3>
+                        <h3>Men&rsquo;s:</h3>
                         <Button status={currentMStatus}></Button>
                         <Button status={currentMCleanliness}></Button>
                     </section>
@@ -57,7 +64,9 @@ function Floor({floorNumber, hasBathrooms}){
             </div>
         )
     }
+
 }
+
 
 
 export default Floor

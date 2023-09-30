@@ -1,5 +1,12 @@
 import Floor from './Floor'
 import { Element } from 'react-scroll';
+import PropTypes from 'prop-types';
+
+
+Building.propTypes = {
+    buildingName: PropTypes.string.isRequired,
+    numberOfFloors: PropTypes.arrayOf(PropTypes.number).isRequired
+};
 
 function Building({buildingName, numberOfFloors}){
     // numberOfFloors must be an array
@@ -52,4 +59,4 @@ function Building({buildingName, numberOfFloors}){
 
 }
 
-export default Building
+export default Building;
