@@ -10,26 +10,6 @@ function Floor({floorNumber, hasBathrooms}){
         let currentMStatus = 'Closed'
         let currentMCleanliness = 'Dirty'
 
-        // const [currentStatus, setCurrentStatus] = useState('Open')
-        // const [currentCleanliness, setCurrentCleanliness] = useState('Clean')
-
-        // using backend for these functions to update: 
-        // const updateStatus = () => {
-        //     if (currentStatus == 'Open') {
-        //         setCurrentStatus('Closed')
-        //     } else if (currentStatus == 'Closed') {
-        //         setCurrentStatus('Closed')
-        //     }
-        // }
-
-        // const updateCleanliness = () => {
-        //     if (currentCleanliness == 'Clean') {
-        //         setCurrentCleanliness('Dirty')
-        //     } else if (currentCleanliness == 'Dirty') {
-        //         setCurrentCleanliness('Clean')
-        //     }
-        // }
-
         return (
             <div className="floor-container">
                 <h1 className='floor-title'>Floor {floorNumber} </h1>
@@ -59,5 +39,26 @@ function Floor({floorNumber, hasBathrooms}){
     }
 }
 
+// the code below would be used to update the state of the bathrooms based off backend data
+
+// const [currentStatus, setCurrentStatus] = useState('Open')
+        // const [currentCleanliness, setCurrentCleanliness] = useState('Clean')
+
+        // using backend for these functions to update: 
+        // const updateStatus = () => {
+        //     if (currentStatus == 'Open') {
+        //         setCurrentStatus('Closed')
+        //     } else if (currentStatus == 'Closed') {
+        //         setCurrentStatus('Closed')
+        //     }
+        // }
+
+        // const updateCleanliness = () => {
+        //     if (currentCleanliness == 'Clean') {
+        //         setCurrentCleanliness('Dirty')
+        //     } else if (currentCleanliness == 'Dirty') {
+        //         setCurrentCleanliness('Clean')
+        //     }
+        // }
 
 export default Floor
