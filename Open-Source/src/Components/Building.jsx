@@ -5,29 +5,34 @@ function Building({buildingName, numberOfFloors}){
     let floors = numberOfFloors.map((count) => {
         if (buildingName == "Library") {
             let image;
+            let hasBathroom = true;
             if (count == 1) {
-                image = "/src/assets/LibraryFirstFloor.PNG"
+                image = "/src/assets/LibraryFirstFloor.PNG";
+                hasBathroom = true;
             } else if (count==2) {
-                image = "/src/assets/LibrarySecondFloor.PNG"
+                image = "/src/assets/LibrarySecondFloor.PNG";
+                hasBathroom = true;
             } else if (count==3) {
-                image = "/src/assets/Library3rdFloor.PNG"
+                image = "/src/assets/Library3rdFloor.PNG";
+                hasBathroom = true;
             } else if (count==4) {
-                image = "/src/assets/Library4thFloor.PNG"
+                image = "/src/assets/Library4thFloor.PNG";
+                hasBathroom = true;
             } else if (count==5) {
-                image = "/src/assets/Library5thFloor.PNG"
+                image = "/src/assets/Library5thFloor.PNG";
+                hasBathroom = true;
             } else if (count==6) {
-                image = "/src/assets/Library6thFloor.PNG"
+                hasBathroom = false;
             }
             return <li key={count}>
-                <Floor floorNumber={count}></Floor>
+                <Floor floorNumber={count}  hasBathrooms={hasBathroom}></Floor>
                 <img src={image}></img>
             </li>
         } else {
             return <li key={count}>
-            <Floor floorNumber={count}></Floor>
+            <Floor floorNumber={count} hasBathrooms={true}></Floor>
         </li>
-        }
-        
+        }    
     })
     
     return (
