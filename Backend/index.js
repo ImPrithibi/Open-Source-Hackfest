@@ -13,7 +13,13 @@ app.use(bodyParser.json());
 
 
 // MongoDB Connection [ File name can be different based on host.]
-mongoose.connect(`mongodb+srv://jonscrp:${process.env.DB_PASSWORD}@cluster0.8ldtugv.mongodb.net/?retryWrites=true&w=majority`, {
+
+// connection string break down 
+// mongodb+srv://[username:password@]host1[:port1][,...hostN[:portN]][/[defaultauthdb][?options]]
+// `mongodb+srv://<username>:<password>@cluster0.8ldtugv.mongodb.net/<SpecifyCollection>?retryWrites=true&w=majority`
+
+
+mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.8ldtugv.mongodb.net/Bathrooms?retryWrites=true&w=majority`, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -32,11 +38,20 @@ const bathroomSchema = new mongoose.Schema({
   crowdedRating: Number,
 });
 
+// Collections are analogous to "tables"
+// Define a model that will be use to populate a document("table").
+// Example the bathrooms (document)
+// will store information with the following format
+// { name: "J1"
+//   location: "Harvard"  
+//   cleanRating: 45  ...
+// }
 
-const Bathrooms = mongoose.model('Bathrooms', bathroomSchema);
+const Bathrooms = mongoose.model('bathrooms', bathroomSchema);
 
 
 // Create a bathroom
+/** 
 const new_bathroom = new Bathrooms(
   // send object
   {
@@ -46,8 +61,9 @@ const new_bathroom = new Bathrooms(
   crowdedRating: 56,
 }
 );
+// save our object to the database
 new_bathroom.save();
-
+**/
 
 
 app.get(`/` , async (req, res) => {
@@ -57,7 +73,6 @@ app.get(`/` , async (req, res) => {
 
 // API Routes
 app.get('/bathrooms', async (req, res) => {
-  console.log("get/bathrooms");
   try {
     const bathroom = await Bathrooms.find();
     res.json(bathroom);
