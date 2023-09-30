@@ -135,3 +135,32 @@ header {
 .building {
     display: center;
 }
+
+
+/* Nav Bar */
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px 0;
+}
+
+.nav-item {
+    margin: 0 20px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-item a:hover {
+    background-color: #555;
+}
+
+

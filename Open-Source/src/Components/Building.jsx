@@ -1,4 +1,5 @@
 import Floor from './Floor'
+import { Element } from 'react-scroll';
 
 function Building({buildingName, numberOfFloors}){
     // numberOfFloors must be an array
@@ -36,16 +37,17 @@ function Building({buildingName, numberOfFloors}){
     })
     
     return (
-        <div className="building">
-            <header>
-                <h1 className="buildingName">QC's {buildingName} Bathroom Status</h1>
-                <a>Issue? Report here</a>
-            </header>
-            <div className="ListView">
-                {floors}
+        <Element name="buildingView">
+            <div className="building">
+                <header>
+                    <h1 className="buildingName">QC&apos;s {buildingName} Bathroom Status</h1>
+                    <a>Issue? Report here</a>
+                </header>
+                <div className="ListView">
+                    {floors}
+                </div>  
             </div>
-            
-        </div>
+        </Element>
     )
 
 }

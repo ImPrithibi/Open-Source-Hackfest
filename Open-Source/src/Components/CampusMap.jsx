@@ -1,4 +1,4 @@
-
+import { Link } from 'react-scroll';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 
@@ -12,8 +12,15 @@ const CampusMap = () => {
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             />
             <Marker position={center}>
-                <Popup>
-                    A sample marker!
+                <Popup position={center}>
+                    Library
+                    <Link 
+                        className="libraryLink"
+                        to="buildingView" 
+                        smooth={true} 
+                        duration={500}>
+                            Library
+                    </Link>
                 </Popup>
             </Marker>
         </MapContainer>
