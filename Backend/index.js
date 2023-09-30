@@ -1,4 +1,3 @@
-
 require('dotenv').config()
 
 const mongoose = require('mongoose');
@@ -65,13 +64,13 @@ const new_bathroom = new Bathrooms(
 new_bathroom.save();
 **/
 
-
+// API Routes
+// routes help us redirect or deliver data to the client
 app.get(`/` , async (req, res) => {
   res.send(`Home`);
 });
 
 
-// API Routes
 app.get('/bathrooms', async (req, res) => {
   try {
     const bathroom = await Bathrooms.find();
@@ -85,6 +84,9 @@ app.get('/bathrooms', async (req, res) => {
 // Handle POST requests to /bathrooms [ again this can be different]
 app.post('/bathrooms', async (req, res) => {
   try {
+    // Post methods store data in their body
+    // using the req.body object we can retrieve this data
+
     const { name, location, cleanRating, crowdedRating } = req.body;
     const bathroom = new Bathrooms({
       name,
