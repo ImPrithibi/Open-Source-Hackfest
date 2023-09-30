@@ -130,3 +130,8 @@ header {
         align-items: center;
     }
 }
+
+/*Center's the building image */
+.building {
+    display: center;
+}
