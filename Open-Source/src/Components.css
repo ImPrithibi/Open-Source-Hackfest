@@ -116,6 +116,38 @@ header {
 
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form > h1 {
+    margin-bottom: 10vh;
+}
+
+form > label {
+    font-weight: strong;
+}
+
+form > select {
+    width: 50%;
+    padding: 0.5em;
+    margin-bottom: 3vh;
+}
+
+input[type=submit] {
+    background-color: white;
+    border:none;
+    font-size: 1.2rem;
+    font-weight: strong;
+}
+
+input[type=submit]:hover {
+    cursor: pointer;
+}
+
 @media (max-width: 480px) {
     body, button {
             font-size: 1rem !important;
@@ -130,6 +162,7 @@ header {
         align-items: center;
     }
 }
+
 
 /*Center's the building image */
 .building {
