@@ -39,7 +39,7 @@ function Building({buildingName, numberOfFloors}){
         <div className="building">
             <header>
                 <h1 className="buildingName">QC's {buildingName} Bathroom Status</h1>
-                <a>Issue? Report here</a>
+                <a>Inaccurate status? Report here</a>
             </header>
             <div className="ListView">
                 {floors}
