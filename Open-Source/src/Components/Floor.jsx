@@ -39,7 +39,7 @@ function Floor({floorNumber, hasBathrooms}){
         return (
             <div className="floor-container">
                     
-                <h1 className='floor-title'>Floor {console.log("Floor number:", floorNumber)} </h1>
+                <h1 className='floor-title'>Floor {floorNumber} </h1>
                 <div className="floor">
                     <section>
                         <h3>Women&rsquo;s</h3>
