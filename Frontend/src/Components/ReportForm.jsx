@@ -16,7 +16,7 @@ function ReportForm() {
 
     return (
         <div className="form">
-            <h1>Report A Bathroom Status Here</h1>
+            <h1 className='report-title'>Report A Bathroom Status Here</h1>
             <form onSubmit={handleSubmit}>
                 <label name="building">Building Name</label>
                 <select value={inputs.building} name="building" id="building" onChange={handleChange}>

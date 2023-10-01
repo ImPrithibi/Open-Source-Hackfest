@@ -125,6 +125,7 @@ form {
 
 .form > h1 {
     margin-bottom: 10vh;
+    color: rgb(169, 5, 5);
 }
 
 form > label {
@@ -142,10 +143,21 @@ input[type=submit] {
     border:none;
     font-size: 1.2rem;
     font-weight: strong;
+    color: rgb(169, 5, 5);
 }
 
 input[type=submit]:hover {
     cursor: pointer;
+}
+
+/*Center's the building image */
+.building {
+    display: center;
+}
+
+.map-title {
+    margin-bottom: 0;
+    color: rgb(169, 5, 5);
 }
 
 
@@ -164,13 +176,3 @@ input[type=submit]:hover {
     }
 }
 
-
-/*Center's the building image */
-.building {
-    display: center;
-}
-
-.map-title {
-    margin-bottom: 0;
-    color: rgb(169, 5, 5);
-}
