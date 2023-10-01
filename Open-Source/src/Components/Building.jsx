@@ -7,19 +7,19 @@ function Building({buildingName, numberOfFloors}){
             let image;
             let hasBathroom = true;
             if (count == 1) {
-                image = "/src/assets/LibraryFirstFloor.PNG";
+                image = "/src/assets/LibraryFirstFloor.png";
                 hasBathroom = true;
             } else if (count==2) {
-                image = "/src/assets/LibrarySecondFloor.PNG";
+                image = "/src/assets/LibrarySecondFloor.png";
                 hasBathroom = true;
             } else if (count==3) {
-                image = "/src/assets/Library3rdFloor.PNG";
+                image = "/src/assets/Library3rdFloor.png";
                 hasBathroom = true;
             } else if (count==4) {
-                image = "/src/assets/Library4thFloor.PNG";
+                image = "/src/assets/Library4thFloor.png";
                 hasBathroom = true;
             } else if (count==5) {
-                image = "/src/assets/Library5thFloor.PNG";
+                image = "/src/assets/Library5thFloor.png";
                 hasBathroom = true;
             } else if (count==6) {
                 hasBathroom = false;
@@ -39,7 +39,7 @@ function Building({buildingName, numberOfFloors}){
         <div className="building">
             <header>
                 <h1 className="buildingName">QC's {buildingName} Bathroom Status</h1>
-                <a>Inaccurate status? Report here</a>
+                <p>Inaccurate status?</p><a> Report here</a>
             </header>
             <div className="ListView">
                 {floors}
