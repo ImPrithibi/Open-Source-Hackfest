@@ -38,7 +38,7 @@ function Building({buildingName, numberOfFloors}){
     return (
         <div className="building">
             <header>
-                <h1 className="buildingName">QC's {buildingName} Bathroom Status</h1>
+                <h1 className="buildingName">QC&rsquo;s {buildingName} Bathroom Status</h1>
                 <a href="./Report">Inaccurate status? Report here</a>
             </header>
             <div className="ListView">

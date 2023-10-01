@@ -15,12 +15,12 @@ function Floor({floorNumber, hasBathrooms}){
                 <h1 className='floor-title'>Floor {floorNumber} </h1>
                 <div className="floor">
                     <section>
-                        <h3>Women's</h3>
+                        <h3>Women&rsquo;s</h3>
                         <Button status={currentWStatus}></Button>
                         <Button status={currentWCleanliness}></Button>
                     </section>
                     <section>
-                        <h3>Men's:</h3>
+                        <h3>Men&rsquo;s:</h3>
                         <Button status={currentMStatus}></Button>
                         <Button status={currentMCleanliness}></Button>
                     </section>
